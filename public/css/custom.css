@@ -1,0 +1,58 @@
+body {
+    color: #ffc107;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffc107 !important;
+}
+.probootstrap-cover{
+    height: 520px !important;
+}
+.probootstrap-section, .probootstrap-footer {
+    padding: 1em 0 !important;
+}
+.probootstrap-cover .probootstrap-text .probootstrap-heading {
+    font-size: 45px !important;
+}
+.probootstrap-text{
+    padding-top: 150px !important;
+}
+.bg-dark {
+    background-color: #000!important;
+}
+h1, h2, h3, h4, h5 {
+    color: #ffc107 !important;
+}
+.dropdown-item { color: #000 !important; }
+
+.nh-title {
+    line-height: 2.9rem;
+    position: relative;
+    color: #005a43;
+    font-family: Roboto Slab,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+}
+.nh-title:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: #ffc107;
+    left: 0;
+    bottom: 0;
+}
+@media screen and (max-width: 767px){
+    .probootstrap-cover {
+        background-position: top;
+        background-color: #191717;
+        background-image: url(../images/poupanca-mobile.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+
+    .probootstrap-text{
+        margin-top: 184px;
+    }
+}
+
+

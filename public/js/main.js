@@ -1,0 +1,1 @@
+$(function(){$('.probootstrap-toggle').on('click',function(){var mainNav=$('.probootstrap-main-nav');if(!mainNav.hasClass('active')){mainNav.addClass('active');}else{mainNav.removeClass('active');}});});
