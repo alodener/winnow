@@ -29,8 +29,8 @@ Route::prefix('financeiros')->group(function () {
     Route::get('carteira', [FinanceiroController::class,'contaBancaria'])->name('dashboard.contaBancaria');
     Route::post('carteira', [FinanceiroController::class,'contaBancariaSalvar'])->name('dashboard.contaBancariaSalvar');
     Route::post('deletar/conta-bancaria', [FinanceiroController::class,'deletarcontabancaria'])->name('dashboard.deletarcontabancaria');
-    Route::get('saques', [App\Http\Controllers\Dashboard\SaqueController::class,'index'])->name('dashboard.saques')->middleware('2fa');
-    Route::post('saques', [App\Http\Controllers\Dashboard\SaqueController::class,'fazerSaque'])->name('dashboard.fazerSaque')->middleware('2fa');
+    Route::get('saques', [App\Http\Controllers\Dashboard\SaqueController::class,'index'])->name('dashboard.saques');
+    Route::post('saques', [App\Http\Controllers\Dashboard\SaqueController::class,'fazerSaque'])->name('dashboard.fazerSaque');
 });
 Route::prefix('pagamentos')->group(function () {
    Route::get('/checkout/{id}',[\App\Http\Controllers\Dashboard\PagamentoController::class,'checkout'])->name('dashboard.pagamentos.checkout');
@@ -73,6 +73,7 @@ Route::prefix('/ticket')->group(function () {
 
 Route::prefix('cursos')->group(function () {
     Route::get('/',[\App\Http\Controllers\Dashboard\CursoController::class,'index'])->name('dashboard.cursos.index');
+    Route::get('/matricula',[\App\Http\Controllers\Dashboard\CursoController::class,'matricula'])->name('dashboard.cursos.matricula');
     Route::get('/categorias',[\App\Http\Controllers\Dashboard\CursoController::class,'categorias'])->name('dashboard.cursos.categorias');
     Route::get('/categorias/{category_id}',[\App\Http\Controllers\Dashboard\CursoController::class,'getCategoria'])->name('dashboard.cursos.getCategoria');
     Route::get('/{course_id}',[\App\Http\Controllers\Dashboard\CursoController::class,'show'])->name('dashboard.cursos.show');
