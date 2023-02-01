@@ -306,7 +306,7 @@ class PagamentoController extends Controller
                                     $n += 1;
                                 }
 
-                            }elseif($pagamentoPatrocinador->tipo == 'renovacao' && $diffDays <= 30){
+                            }elseif($pagamentoPatrocinador->tipo == 'renovacao' && $diffDays <= 30 && $p->tipo === "renovacao"){
                                 if ($n == 1) {
                                     $valor = ($p->valor * 20) / 100;
                                     $wallet = Wallet::where('user_id', $patrocinador->id)->first();
@@ -318,7 +318,7 @@ class PagamentoController extends Controller
                                     $fin->pagamento_id = $p->id;
                                     $fin->tipo = '2';
                                     $fin->valor = $valor;
-                                    $fin->descricao = "Bonus de Venda Nivel ".$n." de " . $p->users->username;
+                                    $fin->descricao = "Bonus de Renovação Nivel ".$n." de " . $p->users->username;
                                     $fin->tipo_bonus = 'indicacao_direta';
                                     $fin->save();
                                     $n += 1;
@@ -333,7 +333,7 @@ class PagamentoController extends Controller
                                     $fin->pagamento_id = $p->id;
                                     $fin->tipo = '2';
                                     $fin->valor = $valor;
-                                    $fin->descricao = "Bonus de Venda Nivel ".$n." de " . $p->users->username;
+                                    $fin->descricao = "Bonus de Renovação Nivel ".$n." de " . $p->users->username;
                                     $fin->tipo_bonus = 'indicacao_indireta';
                                     $fin->save();
                                     $n += 1;
@@ -348,7 +348,7 @@ class PagamentoController extends Controller
                                     $fin->pagamento_id = $p->id;
                                     $fin->tipo = '2';
                                     $fin->valor = $valor;
-                                    $fin->descricao = "Bonus de Venda Nivel ".$n." de " . $p->users->username;
+                                    $fin->descricao = "Bonus de Renovação Nivel ".$n." de " . $p->users->username;
                                     $fin->tipo_bonus = 'indicacao_indireta';
                                     $fin->save();
                                     $n += 1;
@@ -363,7 +363,7 @@ class PagamentoController extends Controller
                                     $fin->pagamento_id = $p->id;
                                     $fin->tipo = '2';
                                     $fin->valor = $valor;
-                                    $fin->descricao = "Bonus de Venda Nivel ".$n." de " . $p->users->username;
+                                    $fin->descricao = "Bonus de Renovação Nivel ".$n." de " . $p->users->username;
                                     $fin->tipo_bonus = 'indicacao_indireta';
                                     $fin->save();
                                     $n += 1;
@@ -378,7 +378,7 @@ class PagamentoController extends Controller
                                     $fin->pagamento_id = $p->id;
                                     $fin->tipo = '2';
                                     $fin->valor = $valor;
-                                    $fin->descricao = "Bonus de Venda Nivel ".$n." de " . $p->users->username;
+                                    $fin->descricao = "Bonus de Renovação Nivel ".$n." de " . $p->users->username;
                                     $fin->tipo_bonus = 'indicacao_indireta';
                                     $fin->save();
                                     $n += 1;
@@ -393,7 +393,7 @@ class PagamentoController extends Controller
                                     $fin->pagamento_id = $p->id;
                                     $fin->tipo = '2';
                                     $fin->valor = $valor;
-                                    $fin->descricao = "Bonus de Venda Nivel ".$n." de " . $p->users->username;
+                                    $fin->descricao = "Bonus de Renovação Nivel ".$n." de " . $p->users->username;
                                     $fin->tipo_bonus = 'indicacao_indireta';
                                     $fin->save();
                                     $n += 1;
@@ -408,7 +408,7 @@ class PagamentoController extends Controller
                                     $fin->pagamento_id = $p->id;
                                     $fin->tipo = '2';
                                     $fin->valor = $valor;
-                                    $fin->descricao = "Bonus de Venda Nivel ".$n." de " . $p->users->username;
+                                    $fin->descricao = "Bonus de Renovação Nivel ".$n." de " . $p->users->username;
                                     $fin->tipo_bonus = 'indicacao_indireta';
                                     $fin->save();
                                     $n += 1;
@@ -423,12 +423,12 @@ class PagamentoController extends Controller
                                     $fin->pagamento_id = $p->id;
                                     $fin->tipo = '2';
                                     $fin->valor = $valor;
-                                    $fin->descricao = "Bonus de Venda Nivel ".$n." de " . $p->users->username;
+                                    $fin->descricao = "Bonus de Renovação Nivel ".$n." de " . $p->users->username;
                                     $fin->tipo_bonus = 'indicacao_indireta';
                                     $fin->save();
                                     $n += 1;
                                 }
-                            }elseif($pagamentoPatrocinador->tipo == 'adesao' && $diffDays > 60){
+                            }elseif($pagamentoPatrocinador->tipo == 'adesao' && $diffDays > 60 && $p->tipo === 'adesao'){
                                 if ($n == 1){
                                     $valor = ($p->valor * 20) / 100;
                                     $wallet = Wallet::where('user_id', $patrocinador->id)->first();
